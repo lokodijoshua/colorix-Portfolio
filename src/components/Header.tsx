@@ -139,12 +139,13 @@ export const Header: React.FC<HeaderProps> = ({ logoUrl, onSetLogoUrl, onContact
             </div>
 
             {/* Nav Links */}
-            <nav className="py-8 space-y-6">
+            <nav className="py-6 space-y-4 sm:space-y-5">
               {[
                 { label: 'HOME', href: '#top' },
+                { label: 'CX SERVICES', href: '#services' },
                 { label: 'PLAYGROUND', href: '#playground' },
                 { label: 'SELECTED WORKS', href: '#works' },
-                { label: 'ABOUT STUDIO', href: '#about' },
+                { label: 'CAC COMPLIANCE', href: '#compliance' },
                 { label: 'CONTACT US', href: '#contact', isAction: true },
               ].map((link, idx) => (
                 <div key={link.label} className="overflow-hidden">

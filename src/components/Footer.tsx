@@ -93,11 +93,17 @@ export const Footer: React.FC<FooterProps> = ({ logoUrl, onContactClick }) => {
 
         </div>
 
-        {/* Bottom Copyright and Back to Top */}
+        {/* Bottom Copyright, CAC Registration, and Back to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <p className="font-mono text-[11px]">
-            © {new Date().getFullYear()} COLORIX STUDIO. ALL RIGHTS RESERVED.
-          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <p className="font-mono text-[11px]">
+              © {new Date().getFullYear()} COLORIX STUDIO. ALL RIGHTS RESERVED.
+            </p>
+            <span className="text-zinc-700">·</span>
+            <span className="text-[11px] font-mono text-emerald-400">
+              CAC REGISTERED // CX DIGITAL SERVICES
+            </span>
+          </div>
           <button
             onClick={scrollToTop}
             className="group flex items-center gap-1.5 text-zinc-400 hover:text-white transition-colors cursor-pointer font-mono text-[11px] uppercase tracking-wider"

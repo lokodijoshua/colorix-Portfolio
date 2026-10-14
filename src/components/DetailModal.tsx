@@ -122,7 +122,7 @@ export const DetailModal: React.FC<DetailModalProps> = ({ item, onClose, onConta
           <div>
             <span className="text-zinc-500 block uppercase mb-1">UI DESIGN</span>
             <span className="text-white font-semibold">
-              {project?.uiDesigner || 'Joseph'}
+              {project?.uiDesigner || 'Sinai J. Bellomy'}
             </span>
           </div>
 
