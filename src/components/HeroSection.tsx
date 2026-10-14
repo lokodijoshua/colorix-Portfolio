@@ -11,47 +11,52 @@ interface HeroSectionProps {
 const HERO_CARDS: HeroCard[] = [
   {
     id: 'card-1',
-    title: 'RED SYNTHESIS',
-    tag: 'VISUAL IDENTITY',
+    title: 'OPENSTUDY',
+    tag: 'STUDENT COMMUNITY',
     year: '2025',
-    bgGradient: 'from-red-600 via-rose-900 to-black',
-    accentColor: '#dc2626',
+    bgGradient: 'from-blue-950 via-zinc-900 to-black',
+    accentColor: '#3b82f6',
+    imageUrl: 'https://res.cloudinary.com/dyzlx6pnt/image/upload/v1791969664/openstudy_img_nlygfj.png',
     type: 'portrait_red',
   },
   {
     id: 'card-2',
-    title: 'CHROME BUST 01',
-    tag: '3D ART DIRECTION',
-    year: '2024',
-    bgGradient: 'from-zinc-100 via-zinc-400 to-zinc-900',
-    accentColor: '#e4e4e7',
+    title: 'WAYWARD STATE',
+    tag: 'CLOTHING BRAND',
+    year: '2025',
+    bgGradient: 'from-amber-950 via-zinc-900 to-black',
+    accentColor: '#f59e0b',
+    imageUrl: 'https://res.cloudinary.com/dyzlx6pnt/image/upload/v1791969933/waywardstate_img_eq2duy.png',
     type: 'chrome_bust',
   },
   {
     id: 'card-3',
-    title: 'NEON HORIZON',
-    tag: 'DIGITAL SCULPTURE',
-    year: '2024',
-    bgGradient: 'from-amber-600 via-red-900 to-black',
-    accentColor: '#ea580c',
+    title: 'MAHARABI',
+    tag: 'MARITIME PORTAL',
+    year: '2025',
+    bgGradient: 'from-emerald-950 via-zinc-900 to-black',
+    accentColor: '#10b981',
+    imageUrl: 'https://res.cloudinary.com/dyzlx6pnt/image/upload/v1791969599/maharabi_img_zr44gg.png',
     type: 'neon_ring',
   },
   {
     id: 'card-4',
-    title: 'ARCHITECTURAL VOID',
-    tag: 'SPATIAL EXPERIENCE',
-    year: '2025',
-    bgGradient: 'from-zinc-800 via-zinc-900 to-black',
-    accentColor: '#3f3f46',
+    title: 'ACENOU',
+    tag: 'CREATIVE STUDIO',
+    year: '2024',
+    bgGradient: 'from-zinc-900 via-rose-950 to-black',
+    accentColor: '#f43f5e',
+    imageUrl: 'https://res.cloudinary.com/dyzlx6pnt/image/upload/v1791969806/acenou_img_zwsmhs.png',
     type: 'dark_arch',
   },
   {
     id: 'card-5',
-    title: 'CYBER VISOR 2026',
-    tag: 'FUTURISTIC BRANDING',
-    year: '2026',
-    bgGradient: 'from-emerald-950 via-teal-900 to-black',
-    accentColor: '#10b981',
+    title: 'VIBEYCURSOR',
+    tag: 'INTERACTIVE WEB',
+    year: '2025',
+    bgGradient: 'from-purple-950 via-zinc-900 to-black',
+    accentColor: '#8b5cf6',
+    imageUrl: 'https://res.cloudinary.com/dyzlx6pnt/image/upload/v1791969612/vibey_img_vxtnnm.png',
     type: 'green_visor',
   },
 ];
@@ -67,7 +72,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     <section className="relative w-full bg-[#0c0c0d] text-white overflow-hidden border-b border-white/10">
       
       {/* Subtle Architectural Vertical Grid Lines (Matches reference grid) */}
-      <div className="absolute inset-0 max-w-[1500px] mx-auto pointer-events-none grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-6 px-6 sm:px-10 z-0">
+      <div className="absolute inset-0 max-w-[1500px] mx-auto pointer-events-none grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-6 px-4 sm:px-10 z-0">
         <div className="border-r border-white/[0.06] h-full" />
         <div className="border-r border-white/[0.06] h-full" />
         <div className="border-r border-white/[0.06] h-full" />
@@ -76,7 +81,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="border-r border-white/[0.06] h-full hidden sm:block" />
       </div>
 
-      <div className="relative z-10 max-w-[1500px] mx-auto px-6 sm:px-10 pt-10 sm:pt-14 pb-0 flex flex-col justify-between min-h-[calc(100vh-5rem)]">
+      <div className="relative z-10 max-w-[1500px] mx-auto px-4 sm:px-10 pt-8 sm:pt-14 pb-0 flex flex-col justify-between min-h-[calc(100vh-5rem)]">
         
         {/* Main Split Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -85,12 +90,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="lg:col-span-7 flex flex-col justify-between">
             <div>
               {/* Top Kicker */}
-              <p className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-zinc-400 uppercase mb-4 sm:mb-6">
+              <p className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-zinc-400 uppercase mb-3 sm:mb-6">
                 CREATIVE DESIGN STUDIO
               </p>
 
-              {/* Massive Bold Headline: COLORIX CREATIVE STUDIO */}
-              <h1 className="font-display text-white text-[15vw] sm:text-[13vw] lg:text-[7.2rem] xl:text-[8.6rem] uppercase tracking-tighter leading-[0.84] select-none">
+              {/* Massive Bold Headline: COLORIX CREATIVE STUDIO with mobile protection */}
+              <h1 className="font-display text-white text-5xl sm:text-7xl md:text-8xl lg:text-[7.2rem] xl:text-[8.6rem] uppercase tracking-tighter leading-[0.88] select-none break-words">
                 COLORIX
                 <br />
                 CREATIVE
@@ -100,7 +105,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Left Metadata Block: EST. 2020 / GLOBAL CREATIVE STUDIO / EXPLORE WORK */}
-            <div className="mt-8 sm:mt-12 space-y-1.5 text-[11px] sm:text-xs font-medium tracking-[0.2em] text-zinc-400 uppercase">
+            <div className="mt-6 sm:mt-12 space-y-1.5 text-[11px] sm:text-xs font-medium tracking-[0.2em] text-zinc-400 uppercase">
               <p>EST. 2020</p>
               <p>GLOBAL CREATIVE STUDIO</p>
               <button
@@ -114,7 +119,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
 
           {/* Right Column: Statement Copy + Stepped Overlapping Card Stack + Metrics */}
-          <div className="lg:col-span-5 flex flex-col justify-between lg:pl-4">
+          <div className="lg:col-span-5 flex flex-col justify-between lg:pl-4 overflow-hidden sm:overflow-visible">
             
             {/* Top Right Statement Text */}
             <div className="flex justify-start lg:justify-end">
@@ -123,12 +128,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </p>
             </div>
 
-            {/* Stepped Cascading Card Stack (Signature Feature from Reference) */}
-            <div className="relative mt-8 sm:mt-10 mb-8 sm:mb-12 h-[340px] sm:h-[400px] w-full max-w-[480px]">
+            {/* Stepped Cascading Card Stack (Reflecting Selected Works Thumbnails) */}
+            <div className="relative mt-6 sm:mt-10 mb-4 sm:mb-12 h-[260px] sm:h-[400px] w-full max-w-[480px]">
               {HERO_CARDS.map((card, index) => {
-                // Diagonal stepped offsets matching the reference staircase layout
-                const offsetX = index * 48; // px shifted right
-                const offsetY = index * 38; // px shifted down
+                // Diagonal stepped offsets: responsive scaling for mobile view
+                // Desktop: 46px right, 36px down. Mobile: 26px right, 20px down so it stays perfectly inside viewport.
                 const isHovered = activeCardId === card.id;
 
                 return (
@@ -138,79 +142,40 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     onMouseLeave={() => setActiveCardId(null)}
                     onClick={() => onCardSelect(card)}
                     style={{
-                      transform: `translate3d(${offsetX}px, ${offsetY}px, 0) ${isHovered ? 'scale(1.05) translate3d(0, -8px, 0)' : ''}`,
                       zIndex: index + 1,
                       transition: 'transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease',
                     }}
-                    className={`absolute top-0 left-0 w-32 h-40 sm:w-36 sm:h-48 md:w-40 md:h-52 rounded-2xl overflow-hidden cursor-pointer border border-white/20 shadow-2xl bg-gradient-to-br ${card.bgGradient} p-2 flex flex-col justify-between group`}
+                    className={`absolute top-0 left-0 w-28 h-36 sm:w-36 sm:h-48 md:w-40 md:h-52 rounded-2xl overflow-hidden cursor-pointer border border-white/20 shadow-2xl bg-gradient-to-br ${card.bgGradient} p-1.5 sm:p-2 flex flex-col justify-between group
+                      ${index === 0 ? 'translate-x-0 translate-y-0 sm:translate-x-0 sm:translate-y-0' : ''}
+                      ${index === 1 ? 'translate-x-[26px] translate-y-[20px] sm:translate-x-[46px] sm:translate-y-[36px]' : ''}
+                      ${index === 2 ? 'translate-x-[52px] translate-y-[40px] sm:translate-x-[92px] sm:translate-y-[72px]' : ''}
+                      ${index === 3 ? 'translate-x-[78px] translate-y-[60px] sm:translate-x-[138px] sm:translate-y-[108px]' : ''}
+                      ${index === 4 ? 'translate-x-[104px] translate-y-[80px] sm:translate-x-[184px] sm:translate-y-[144px]' : ''}
+                      ${isHovered ? 'scale-105 -translate-y-2' : ''}
+                    `}
                   >
-                    {/* Visual Graphic Artwork Placeholder */}
-                    <div className="relative w-full h-full rounded-xl overflow-hidden flex items-center justify-center">
-                      
-                      {/* Stylized Visual Representations based on Card Type */}
-                      {card.type === 'portrait_red' && (
-                        <div className="relative w-full h-full bg-red-600/90 flex items-center justify-center overflow-hidden">
-                          {/* Silhouette Portrait with Sunglasses */}
-                          <div className="absolute inset-0 bg-radial from-red-500 via-red-800 to-black opacity-90" />
-                          <div className="relative z-10 flex flex-col items-center">
-                            <div className="w-16 h-20 bg-zinc-950 rounded-t-full relative flex items-center justify-center">
-                              {/* Green sunglasses visor */}
-                              <div className="w-12 h-3.5 bg-lime-400 rounded-sm shadow-[0_0_12px_#a3e635] mt-1" />
-                            </div>
-                            <div className="w-24 h-12 bg-zinc-950 rounded-t-2xl -mt-2" />
-                          </div>
-                        </div>
-                      )}
-
-                      {card.type === 'chrome_bust' && (
-                        <div className="relative w-full h-full bg-gradient-to-b from-zinc-200 via-zinc-400 to-zinc-900 flex items-center justify-center">
-                          {/* 3D Chrome Bust silhouette */}
-                          <div className="w-16 h-22 rounded-t-full bg-gradient-to-tr from-white via-zinc-300 to-zinc-700 shadow-inner relative flex flex-col items-center justify-center">
-                            <div className="w-8 h-2 bg-zinc-900 rounded-full mb-1 opacity-70" />
-                            <div className="w-6 h-1 bg-zinc-800 rounded-full opacity-60" />
-                          </div>
-                        </div>
-                      )}
-
-                      {card.type === 'neon_ring' && (
-                        <div className="relative w-full h-full bg-gradient-to-b from-red-700 via-rose-950 to-black flex items-center justify-center">
-                          {/* Glowing orange/red visor beam */}
-                          <div className="relative z-10 flex flex-col items-center">
-                            <div className="w-14 h-18 bg-zinc-950 rounded-t-full relative flex items-center justify-center">
-                              <div className="w-14 h-3 bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 shadow-[0_0_16px_#f97316] rounded-xs" />
-                            </div>
-                            <div className="w-20 h-10 bg-zinc-950 rounded-t-xl -mt-1" />
-                          </div>
-                        </div>
-                      )}
-
-                      {card.type === 'dark_arch' && (
-                        <div className="relative w-full h-full bg-zinc-900 flex items-center justify-center">
-                          {/* Architectural minimal portal */}
-                          <div className="w-16 h-24 border-2 border-zinc-700 rounded-t-full bg-zinc-950 shadow-inner flex items-center justify-center">
-                            <div className="w-8 h-12 bg-black rounded-t-full border border-zinc-800" />
-                          </div>
-                        </div>
-                      )}
-
-                      {card.type === 'green_visor' && (
-                        <div className="relative w-full h-full bg-gradient-to-b from-red-900 via-rose-950 to-black flex items-center justify-center">
-                          {/* Neon Lime Visor Cyber Portrait */}
-                          <div className="relative z-10 flex flex-col items-center">
-                            <div className="w-16 h-20 bg-zinc-950 rounded-t-full relative flex items-center justify-center">
-                              <div className="w-12 h-4 bg-lime-400 shadow-[0_0_16px_#a3e635] rounded-xs" />
-                            </div>
-                            <div className="w-22 h-12 bg-zinc-950 rounded-t-xl -mt-2" />
-                          </div>
-                        </div>
+                    {/* Visual Graphic Artwork: Reflecting Selected Works Thumbnail */}
+                    <div className="relative w-full h-full rounded-xl overflow-hidden bg-black flex items-center justify-center">
+                      {card.imageUrl ? (
+                        <>
+                          <img
+                            src={card.imageUrl}
+                            alt={`${card.title} Selected Work Thumbnail`}
+                            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                            loading="eager"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                        </>
+                      ) : (
+                        <div className="w-full h-full bg-zinc-900" />
                       )}
 
                       {/* Card Overlay Details on Hover */}
-                      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2.5 text-left">
-                        <span className="text-[9px] font-mono tracking-wider text-zinc-300 uppercase">
+                      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2 sm:p-2.5 text-left">
+                        <span className="text-[8px] sm:text-[9px] font-mono tracking-wider text-red-400 uppercase">
                           {card.tag}
                         </span>
-                        <span className="text-xs font-bold text-white uppercase tracking-tight">
+                        <span className="text-[10px] sm:text-xs font-bold text-white uppercase tracking-tight truncate">
                           {card.title}
                         </span>
                       </div>
@@ -219,11 +184,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 );
               })}
 
-              {/* Key Metrics Block (Directly left of bottom card stack as in reference) */}
-              <div className="absolute -bottom-6 left-2 sm:left-4 z-20 space-y-3 pointer-events-auto">
+              {/* Key Metrics Block: Project Done (19), Global Client (4), Experience (5+ years) */}
+              <div className="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:left-4 z-20 flex sm:block flex-wrap gap-4 sm:gap-0 sm:space-y-3 pointer-events-auto">
                 <div className="border-l border-white/20 pl-2 sm:pl-3">
-                  <div className="font-display text-lg sm:text-2xl text-white tracking-tight leading-none">
-                    40+
+                  <div className="font-display text-xl sm:text-2xl text-white tracking-tight leading-none">
+                    19
                   </div>
                   <div className="text-[10px] tracking-[0.2em] uppercase text-zinc-400 font-medium">
                     PROJECT DONE
@@ -231,8 +196,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </div>
 
                 <div className="border-l border-white/20 pl-2 sm:pl-3">
-                  <div className="font-display text-lg sm:text-2xl text-white tracking-tight leading-none">
-                    12
+                  <div className="font-display text-xl sm:text-2xl text-white tracking-tight leading-none">
+                    4
                   </div>
                   <div className="text-[10px] tracking-[0.2em] uppercase text-zinc-400 font-medium">
                     GLOBAL CLIENT
@@ -240,8 +205,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </div>
 
                 <div className="border-l border-white/20 pl-2 sm:pl-3">
-                  <div className="font-display text-lg sm:text-2xl text-white tracking-tight leading-none">
-                    6
+                  <div className="font-display text-xl sm:text-2xl text-white tracking-tight leading-none">
+                    5+
                   </div>
                   <div className="text-[10px] tracking-[0.2em] uppercase text-zinc-400 font-medium">
                     YEARS OF EXPERIENCE
@@ -256,7 +221,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* Hero Bottom Bar: Statement paragraph + CONTACT US Button + Social Cell Strip */}
-        <div className="mt-12 sm:mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-6 pb-6">
+        <div className="mt-8 sm:mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-6 pb-6">
           
           {/* Bottom Left Paragraph */}
           <p className="text-[11px] sm:text-xs tracking-wider uppercase text-zinc-400 font-medium max-w-md leading-relaxed">
@@ -264,12 +229,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </p>
 
           {/* Bottom Right: Solid White CONTACT US button + Social Media Strip */}
-          <div className="flex items-stretch self-start md:self-auto border border-white/15 divide-x divide-white/15">
+          <div className="flex items-stretch w-full sm:w-auto border border-white/15 divide-x divide-white/15">
             
             {/* CONTACT US Solid White Button */}
             <button
               onClick={onContactClick}
-              className="bg-white text-black font-extrabold uppercase text-[11px] sm:text-xs tracking-[0.2em] px-6 sm:px-8 py-3.5 hover:bg-zinc-200 transition-colors cursor-pointer flex items-center justify-center shrink-0"
+              className="flex-1 sm:flex-initial bg-white text-black font-extrabold uppercase text-[11px] sm:text-xs tracking-[0.2em] px-6 sm:px-8 py-3.5 hover:bg-zinc-200 transition-colors cursor-pointer flex items-center justify-center shrink-0"
             >
               CONTACT US
             </button>
@@ -279,7 +244,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               href="https://dribbble.com"
               target="_blank"
               rel="noreferrer"
-              className="w-12 h-12 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer shrink-0"
+              className="flex-1 sm:w-12 h-12 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer shrink-0"
               title="Dribbble"
               aria-label="Dribbble"
             >
@@ -291,7 +256,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               href="https://facebook.com"
               target="_blank"
               rel="noreferrer"
-              className="w-12 h-12 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer shrink-0"
+              className="flex-1 sm:w-12 h-12 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer shrink-0"
               title="Facebook"
               aria-label="Facebook"
             >
@@ -303,7 +268,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               href="https://twitter.com"
               target="_blank"
               rel="noreferrer"
-              className="w-12 h-12 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer shrink-0"
+              className="flex-1 sm:w-12 h-12 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer shrink-0"
               title="X / Twitter"
               aria-label="X / Twitter"
             >
@@ -315,7 +280,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               href="https://instagram.com"
               target="_blank"
               rel="noreferrer"
-              className="w-12 h-12 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer shrink-0"
+              className="flex-1 sm:w-12 h-12 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer shrink-0"
               title="Instagram"
               aria-label="Instagram"
             >

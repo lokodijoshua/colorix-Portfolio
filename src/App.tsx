@@ -54,6 +54,7 @@ export default function App() {
         {/* 4. Playground Section (White Section with signature curved arc & PLAYGROUND. headline) */}
         <PlaygroundSection
           onContactClick={() => setIsContactOpen(true)}
+          onProjectsClick={handleExploreWork}
           onItemSelect={(item) => setSelectedItem(item)}
         />
 

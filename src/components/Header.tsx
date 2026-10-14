@@ -44,41 +44,13 @@ export const Header: React.FC<HeaderProps> = ({ logoUrl, onSetLogoUrl, onContact
             </a>
           </div>
 
-          {/* Right Section: Subtitle, Top-Right Logo Section, and Hamburger Menu */}
-          <div className="flex items-center gap-4 sm:gap-6">
+          {/* Right Section: Role Subtitle & Hamburger Menu (Right-hand logo completely removed as instructed) */}
+          <div className="flex items-center gap-5 sm:gap-7">
             
-            {/* Role subtitle from reference: CREATIVE UI & VISUAL DESIGNER */}
+            {/* Role subtitle: CREATIVE UI & SOFTWARE ENGINEER */}
             <span className="hidden md:inline-block text-[11px] sm:text-xs font-bold tracking-[0.2em] text-zinc-800 uppercase">
-              CREATIVE UI & VISUAL DESIGNER
+              CREATIVE UI & SOFTWARE ENGINEER
             </span>
-
-            {/* TOP-RIGHT LOGO SECTION */}
-            <div
-              id="top-right-logo-slot"
-              className="relative flex items-center justify-center min-w-[36px] sm:min-w-[44px] h-8 sm:h-9"
-              title="Colorix Submark Logo"
-            >
-              {logoUrl ? (
-                <img
-                  src={logoUrl}
-                  alt="Colorix Submark Logo"
-                  className="max-h-7 sm:max-h-8 w-auto object-contain hover:opacity-90 transition-opacity"
-                />
-              ) : (
-                /* Empty Logo Section Container: subtle sleek dashed boundary ready for logo */
-                <button
-                  type="button"
-                  onClick={() => setShowLogoInput(true)}
-                  className="group relative flex items-center justify-center px-2.5 py-1 rounded border border-dashed border-zinc-300 hover:border-zinc-500 bg-zinc-50/60 hover:bg-zinc-100 transition-all text-center"
-                  aria-label="Empty logo slot - click to paste logo link anytime"
-                >
-                  <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-zinc-400 group-hover:text-zinc-700">
-                    [LOGO SLOT]
-                  </span>
-                  <span className="sr-only">Logo container empty</span>
-                </button>
-              )}
-            </div>
 
             {/* Hamburger Menu Toggle Button */}
             <button

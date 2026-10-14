@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { PlaygroundItem } from '../types';
 
 interface PlaygroundSectionProps {
-  onContactClick: () => void;
+  onContactClick?: () => void;
+  onProjectsClick?: () => void;
   onItemSelect: (item: PlaygroundItem) => void;
 }
 
@@ -101,6 +102,7 @@ const PLAYGROUND_ITEMS: PlaygroundItem[] = [
 
 export const PlaygroundSection: React.FC<PlaygroundSectionProps> = ({
   onContactClick,
+  onProjectsClick,
   onItemSelect,
 }) => {
   const [hoveredItem, setHoveredItem] = useState<PlaygroundItem | null>(null);
@@ -212,10 +214,10 @@ export const PlaygroundSection: React.FC<PlaygroundSectionProps> = ({
         <div className="border-r border-zinc-200/70 h-full hidden sm:block" />
       </div>
 
-      <div className="relative z-10 max-w-[1500px] mx-auto px-6 sm:px-10">
+      <div className="relative z-10 max-w-[1500px] mx-auto px-4 sm:px-10">
         
         {/* Top Split Statement Paragraphs */}
-        <div className="flex flex-col md:flex-row items-start justify-between gap-6 mb-12 sm:mb-16">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-4 sm:gap-6 mb-8 sm:mb-16">
           <p className="text-[11px] sm:text-xs tracking-wider uppercase text-zinc-600 font-medium max-w-sm leading-relaxed">
             ENGAGING IN CREATIVE EXPERIMENTS AND EXPLORING INNOVATIVE CONCEPTS THAT TRULY PUSH THE BOUNDARIES OF OUR CRAFT.
           </p>
@@ -228,18 +230,15 @@ export const PlaygroundSection: React.FC<PlaygroundSectionProps> = ({
           THE PLAYGROUND ARCH (Centerpiece)
           A sweeping curved semi-circle of tiles wrapping above the PLAYGROUND title
         */}
-        <div className="relative w-full flex flex-col items-center justify-center pt-8 pb-12 select-none">
+        <div className="relative w-full flex flex-col items-center justify-center pt-4 sm:pt-8 pb-8 sm:pb-12 select-none overflow-hidden">
           
-          {/* Desktop/Tablet Arc Container */}
-          <div className="relative w-full max-w-[960px] h-[340px] sm:h-[460px] md:h-[520px] lg:h-[580px] flex items-center justify-center">
+          {/* Desktop/Tablet/Mobile Arc Container */}
+          <div className="relative w-full max-w-[960px] h-[280px] sm:h-[460px] md:h-[520px] lg:h-[580px] flex items-center justify-center">
             
             {/* Render the 9 tiles along the semi-circular arc */}
             {PLAYGROUND_ITEMS.map((item) => {
               // Convert angle to radians
               const rad = (item.angle * Math.PI) / 180;
-              
-              // Responsive radius calculations based on CSS variables or percentages
-              // Center point is located at bottom-center of the arc box
               const tangentRotation = item.angle + 90;
 
               return (
@@ -249,19 +248,17 @@ export const PlaygroundSection: React.FC<PlaygroundSectionProps> = ({
                   onMouseEnter={() => setHoveredItem(item)}
                   onMouseLeave={() => setHoveredItem(null)}
                   style={{
-                    // Position dynamically using polar coordinates
                     position: 'absolute',
                     left: '50%',
                     top: '82%',
-                    // Apply translation based on polar radius
-                    transform: `translate(-50%, -50%) translate3d(calc(${Math.cos(rad)} * min(390px, 42vw)), calc(${Math.sin(rad)} * min(330px, 35vw)), 0) rotate(${tangentRotation}deg)`,
+                    transform: `translate(-50%, -50%) translate3d(calc(${Math.cos(rad)} * min(390px, 38vw)), calc(${Math.sin(rad)} * min(320px, 31vw)), 0) rotate(${tangentRotation}deg)`,
                     transition: 'transform 250ms cubic-bezier(0.16, 1, 0.3, 1), z-index 100ms',
                     zIndex: hoveredItem?.id === item.id ? 30 : 10,
                   }}
                   className="cursor-pointer group"
                 >
                   <div
-                    className={`w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-black/10 transition-all duration-300 group-hover:scale-115 group-hover:shadow-2xl group-hover:border-black/30`}
+                    className={`w-12 h-12 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-xl sm:rounded-3xl overflow-hidden shadow-lg border border-black/10 transition-all duration-300 group-hover:scale-115 group-hover:shadow-2xl group-hover:border-black/30`}
                   >
                     {renderTileGraphic(item)}
                   </div>
@@ -270,7 +267,7 @@ export const PlaygroundSection: React.FC<PlaygroundSectionProps> = ({
                   {hoveredItem?.id === item.id && (
                     <div
                       style={{ transform: `rotate(${-tangentRotation}deg)` }}
-                      className="absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-white px-2.5 py-1 rounded text-[10px] tracking-widest font-mono uppercase whitespace-nowrap shadow-xl pointer-events-none z-40"
+                      className="absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-white px-2 py-0.5 sm:px-2.5 sm:py-1 rounded text-[9px] sm:text-[10px] tracking-widest font-mono uppercase whitespace-nowrap shadow-xl pointer-events-none z-40"
                     >
                       {item.title}
                     </div>
@@ -279,7 +276,7 @@ export const PlaygroundSection: React.FC<PlaygroundSectionProps> = ({
               );
             })}
 
-            {/* Corner Decorative Peeks (as seen in the bottom left/right of reference) */}
+            {/* Corner Decorative Peeks (hidden on mobile to prevent overflow) */}
             <div className="absolute -bottom-6 left-2 sm:left-12 w-16 h-16 sm:w-24 sm:h-24 rounded-2xl sm:rounded-3xl overflow-hidden opacity-40 shadow-sm border border-zinc-200 hidden sm:block">
               <div className="w-full h-full bg-gradient-to-tr from-rose-900 to-amber-700 p-2 flex items-center justify-center">
                 <div className="w-10 h-10 rounded-full bg-black/40" />
@@ -294,26 +291,33 @@ export const PlaygroundSection: React.FC<PlaygroundSectionProps> = ({
 
             {/* 
               Inside Center Content:
-              PLAYGROUND. Headline + Subtitle + CONTACT US Button
+              PLAYGROUND. Headline + Subtitle + VIEW PROJECTS Button
             */}
-            <div className="absolute top-[68%] sm:top-[66%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full max-w-xl px-4 z-20 flex flex-col items-center">
+            <div className="absolute top-[68%] sm:top-[66%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full max-w-xl px-2 sm:px-4 z-20 flex flex-col items-center">
               
               {/* Massive Bold Headline: PLAYGROUND. */}
-              <h2 className="font-display text-black text-5xl sm:text-6xl md:text-7xl lg:text-[6.8rem] tracking-tight leading-none uppercase">
+              <h2 className="font-display text-black text-4xl sm:text-6xl md:text-7xl lg:text-[6.8rem] tracking-tight leading-none uppercase">
                 PLAYGROUND<span className="text-black">.</span>
               </h2>
 
               {/* Subtext Paragraph */}
-              <p className="mt-3 sm:mt-4 text-[10px] sm:text-[11px] md:text-xs tracking-wider uppercase text-zinc-500 font-semibold max-w-sm sm:max-w-md leading-relaxed">
+              <p className="mt-2 sm:mt-4 text-[9px] sm:text-[11px] md:text-xs tracking-wider uppercase text-zinc-500 font-semibold max-w-xs sm:max-w-md leading-relaxed">
                 WHERE IDEAS TAKE SHAPE. A SPACE FOR EXPLORING VISUAL DIRECTIONS, EMERGING TOOLS, AND CREATIVE EXPERIMENTS.
               </p>
 
-              {/* Centered CONTACT US Button */}
+              {/* Centered VIEW PROJECTS Button (linked to portfolio projects) */}
               <button
-                onClick={onContactClick}
-                className="mt-5 sm:mt-6 bg-black text-white font-extrabold uppercase text-[11px] sm:text-xs tracking-[0.2em] px-8 py-3.5 hover:bg-zinc-800 transition-colors shadow-md cursor-pointer"
+                onClick={() => {
+                  if (onProjectsClick) {
+                    onProjectsClick();
+                  } else {
+                    document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="mt-5 sm:mt-6 bg-black text-white font-extrabold uppercase text-[11px] sm:text-xs tracking-[0.2em] px-8 py-3.5 hover:bg-zinc-800 transition-colors shadow-md cursor-pointer flex items-center gap-2"
               >
-                CONTACT US
+                <span>VIEW PROJECTS</span>
+                <span className="text-zinc-400">↓</span>
               </button>
 
             </div>

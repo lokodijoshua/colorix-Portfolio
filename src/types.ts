@@ -16,6 +16,7 @@ export interface HeroCard {
   year: string;
   bgGradient: string;
   accentColor: string;
+  imageUrl?: string;
   type: 'portrait_red' | 'chrome_bust' | 'neon_ring' | 'dark_arch' | 'green_visor';
 }
 
@@ -28,4 +29,10 @@ export interface ProjectItem {
   aspect: string;
   summary: string;
   bgGradient: string;
+  thumbnailUrl: string;
+  liveUrl: string;
+  developer?: string;
+  uiDesigner?: string;
+  tags?: string[];
 }
+

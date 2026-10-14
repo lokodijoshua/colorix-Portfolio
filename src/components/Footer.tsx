@@ -48,10 +48,11 @@ export const Footer: React.FC<FooterProps> = ({ logoUrl, onContactClick }) => {
               CAPABILITIES
             </h4>
             <ul className="space-y-2 text-xs font-medium text-zinc-300 uppercase tracking-wider">
+              <li className="hover:text-white transition-colors cursor-default">WEB APPLICATION</li>
+              <li className="hover:text-white transition-colors cursor-default">CLOUD APPLICATION</li>
+              <li className="hover:text-white transition-colors cursor-default">AI AUTOMATION</li>
               <li className="hover:text-white transition-colors cursor-default">UI/UX & DIGITAL SYSTEMS</li>
               <li className="hover:text-white transition-colors cursor-default">VISUAL IDENTITY & DIRECTION</li>
-              <li className="hover:text-white transition-colors cursor-default">3D GENERATIVE WORLDS</li>
-              <li className="hover:text-white transition-colors cursor-default">EXPERIMENTAL PROTOTYPING</li>
               <li className="hover:text-white transition-colors cursor-default">MOTION & INTERACTION</li>
             </ul>
           </div>
