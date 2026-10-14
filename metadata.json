@@ -1,0 +1,6 @@
+{
+  "name": "Colorix Creative Studio",
+  "description": "Portfolio landing page for Colorix Creative Studio featuring editorial layout, interactive playground arc, and project showcases.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
